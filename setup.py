@@ -186,7 +186,7 @@ if not SKIP_CUDA_BUILD:
             num = "100a"
             NVCC_FLAGS_TMP += ["-gencode", f"arch=compute_{num},code=sm_{num}"]
         if HAS_SM120:
-            num = "120"
+            num = "120a"
             NVCC_FLAGS_TMP += ["-gencode", f"arch=compute_{num},code=sm_{num}"]
 
         ext_modules.append(
@@ -213,7 +213,7 @@ if not SKIP_CUDA_BUILD:
             num = "100a"
             NVCC_FLAGS_TMP += ["-gencode", f"arch=compute_{num},code=sm_{num}"]
         if HAS_SM120:
-            num = "120"
+            num = "120a"
             NVCC_FLAGS_TMP += ["-gencode", f"arch=compute_{num},code=sm_{num}"]
 
         ext_modules.append(
@@ -265,8 +265,11 @@ if not SKIP_CUDA_BUILD:
     if HAS_SM90:
         num = "90a"
         NVCC_FLAGS_TMP += ["-gencode", f"arch=compute_{num},code=sm_{num}"]
+    if HAS_SM100:
+        num = "100a"
+        NVCC_FLAGS_TMP += ["-gencode", f"arch=compute_{num},code=sm_{num}"]
     if HAS_SM120:
-        num = "120"
+        num = "120a"
         NVCC_FLAGS_TMP += ["-gencode", f"arch=compute_{num},code=sm_{num}"]
 
     ext_modules.append(
